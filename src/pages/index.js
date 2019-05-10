@@ -26,16 +26,44 @@ const IndexPage = () => (
 
       const heroStyle = {
         backgroundImage: `url(${data.background.publicURL})`,
-        backgroundPosition: `center bottom`,
+        backgroundPosition: `50% bottom`,
         backgroundRepeat: `no-repeat`,
         backgroundSize: `cover`,
         color: `white`,
         width: `100%`,
-        height: `600px`,
+        height: `700px`,
+      }
+
+      const titleStyle = {
+        fontSize: `3.2rem`,
+      }
+
+      const titleStyle2 = {
+        fontSize: `2.5rem`,
+      }
+
+      const subtitleStyle = {
+        fontSize: `1.4rem`,
+        lineHeight: `2rem`,
+        fontWeight: `100`,
+      }
+
+      const subtitleStyle2 = {
+        fontSize: `1.25rem`,
+        lineHeight: `1.25rem`,
+        padding: `0 0 10px 0`,
+        fontWeight: `100`,
+      }
+
+      const numberStyle = {
+        fontSize: `4rem`,
+        color: `#DDD`,
+        // textAlign: `right`,
+        // margin: `0`
       }
 
       const containerStyle = {
-        maxWidth: `800px`,
+        maxWidth: `1000px`,
         margin: `0 auto`,
         padding: `30px`,
       }
@@ -47,7 +75,9 @@ const IndexPage = () => (
         padding: `10px 15px`,
         borderRadius: `5px`,
         boxShadow: `5px 5px 10px rgba(0,0,0,0.3)`,
-        fontWeight: `600`,
+        fontWeight: `500`,
+        fontSize: `1.1rem`,
+        cursor: `pointer`,
       }
 
       const processBlockStyle = {
@@ -90,9 +120,9 @@ const IndexPage = () => (
           <section style={heroStyle}>
             <div style={containerStyle}>
               <img src={data.logoWhite.publicURL} alt="Logo" width="120" />
-              <div style={{ maxWidth: `450px`, padding: `5px 0` }}>
-                <h1>Business Blogging Made Easy</h1>
-                <p>Drive 97% more traffic to your website with high-quality, SEO-optimised blog posts.</p>
+              <div style={{ maxWidth: `500px`, padding: `5px 0` }}>
+                <h1 style={titleStyle}>Business Blogging Made Easy</h1>
+                <p style={subtitleStyle}>Drive 97% more traffic to your website with high-quality, SEO-optimised blog posts.</p>
                 <a href="#contact-us"><button type="button" style={buttonStyle}>Arrange a Trial</button></a>
               </div>
             </div>
@@ -101,8 +131,8 @@ const IndexPage = () => (
           <section style={{ margin: `-80px 0 20px 0` }}>
             <div style={containerStyle}>
               <div style={{ textAlign: `right` }}>
-                <h1>Our Process</h1>
-                <p>Our 3-step formula for blogging success.</p>
+                <h1 style={titleStyle2}>Our Process</h1>
+                <p style={subtitleStyle2}>Our 3-step formula for blogging success.</p>
               </div>
               <div style={{
                 display: `grid`,
@@ -110,17 +140,17 @@ const IndexPage = () => (
                 gridGap: `20px`,
               }}>
                 <div style={processBlockStyle}>
-                  <h2>1.</h2>
+                  <h2 style={numberStyle}>1.</h2>
                   <h3 style={h3ProcessStyle}>Define your goals</h3>
                   <p>We’ll start by establishing your core goals, the keywords you want to rank for, and your brand voice.</p>
                 </div>
                 <div style={processBlockStyle}>
-                  <h2>2.</h2>
+                  <h2 style={numberStyle}>2.</h2>
                   <h3 style={h3ProcessStyle}>Create your blueprint</h3>
                   <p>Together, we’ll fine-tune a content plan – usually covering the next 3-6 months – based on your specific goals.</p>
                 </div>
                 <div style={processBlockStyle}>
-                  <h2>3.</h2>
+                  <h2 style={numberStyle}>3.</h2>
                   <h3 style={h3ProcessStyle}>Hit publish</h3>
                   <p>We’ll send you your content on a regular schedule, and – after any feedback – all you have to do is press publish!</p>
                 </div>
@@ -186,9 +216,9 @@ const IndexPage = () => (
 
           <section style={tealBlock} id="contact-us">
             <div style={containerStyle}>
-            <div style={{textAlign: `center`}}>
-              <h1>Contact Us</h1>
-              <p>If you want to find out more or arrange a trial, simply fill in the form below.</p>
+              <div style={{ textAlign: `center` }}>
+                <h1>Contact Us</h1>
+                <p>If you want to find out more or arrange a trial, simply fill in the form below.</p>
               </div>
               <form style={{
                 boxSizing: `border-box`,
@@ -217,7 +247,7 @@ const IndexPage = () => (
                     <input style={{ width: `100%`, background: `rgba(255,255,255,0.4)`, border: `none`, minHeight: `2rem` }} type="text" />
                   </label>
                 </div>
-                <div style={{ gridColumn: `1/4`, width: `100%`,  }}>
+                <div style={{ gridColumn: `1/4`, width: `100%`, }}>
                   <label htmlFor="message">
                     Message:
                   <br />
@@ -237,17 +267,17 @@ const IndexPage = () => (
                 <hr style={{ background: `white`, }} />
                 <ul style={{
                   listStyle: `none`
-                  }}>
-                  <li style={{ display: `inline-block`, padding: `0 10px`}}>Privacy Policy</li>
-                  <li style={{ display: `inline-block`, padding: `0 10px`}}>|</li>
-                  <li style={{ display: `inline-block`, padding: `0 10px`}}>Terms and Conditions</li>
+                }}>
+                  <li style={{ display: `inline-block`, padding: `0 10px` }}>Privacy Policy</li>
+                  <li style={{ display: `inline-block`, padding: `0 10px` }}>|</li>
+                  <li style={{ display: `inline-block`, padding: `0 10px` }}>Terms and Conditions</li>
                 </ul>
                 <img src={data.logoWhite.publicURL} alt="Logo" width="100" />
                 <p>© {new Date().getFullYear()} triffic<br />Website by Bret Cameron</p>
               </div>
             </div>
           </footer>
-        </Layout>
+        </Layout >
       )
     }
     }
