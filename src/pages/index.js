@@ -12,6 +12,14 @@ const IndexPage = () => (
           publicURL
           relativePath
         }
+        logoWhite: file(relativePath: {eq: "white_logo.svg"}) {
+          publicURL
+          relativePath
+        }
+        logoColour: file(relativePath: {eq: "colour_logo.svg"}) {
+          publicURL
+          relativePath
+        }
       }
     `}
     render={data => {
@@ -53,13 +61,26 @@ const IndexPage = () => (
       }
 
       const tealBlock = {
-        backgroundColor: `teal`,
+        background: `teal`,
         color: `white`,
         width: `100%`,
       }
 
+      const gradientBlock = {
+        background: `linear-gradient(-90deg, teal, #005980)`,
+        color: `white`,
+        width: `100%`,
+      }
+
+      const sampleStyle = {
+        border: `1px solid white`,
+        padding: `20px`,
+        borderRadius: `5px`,
+        background: `rgba(255, 255, 255, 0.05)`,
+      }
+
       const footerStyle = {
-        backgroundColor: `black`,
+        background: `linear-gradient(teal, #111111)`,
         color: `white`,
         width: `100%`,
       }
@@ -68,7 +89,8 @@ const IndexPage = () => (
         <Layout>
           <section style={heroStyle}>
             <div style={containerStyle}>
-              <div style={{ maxWidth: `600px`, padding: `60px 0` }}>
+              <img src={data.logoWhite.publicURL} alt="Logo" width="120" />
+              <div style={{ maxWidth: `450px`, padding: `5px 0` }}>
                 <h1>Business Blogging Made Easy</h1>
                 <p>Drive 97% more traffic to your website with high-quality, SEO-optimised blog posts.</p>
                 <a href="#contact-us"><button type="button" style={buttonStyle}>Arrange a Trial</button></a>
@@ -106,38 +128,55 @@ const IndexPage = () => (
             </div>
           </section>
 
-          <section style={tealBlock}>
+          <section style={gradientBlock}>
             <div style={containerStyle}>
-              <h1>Sample Writing</h1>
-              <p>A few samples of our work. If you’d like to see more, or you’re looking for a specific vertical, get in touch.</p>
-              <div>
-                <h2>Finance</h2>
-                <p>What we can learn from the commodity dip</p>
+              <div style={{
+                textAlign: `center`,
+                padding: `50px 0`
+              }}>
+                <h1>Sample Writing</h1>
+                <p>A few samples of our work. If you’d like to see more, or you’re looking for a specific vertical, feel free to <a href="#contact-us" style={{ color: `white` }}>get in touch</a>.</p>
               </div>
-              <div>
-                <h2>Software as a Service</h2>
-                <p>Boost your productivity with machine learning</p>
-              </div>
-              <div>
-                <h2>Social Media</h2>
-                <p>What can marketers learn from the rise of TikTok?</p>
-              </div>
-              <div>
-                <h2>Recruitment</h2>
-                <p>20 steps to landing your Dream Job</p>
-              </div>
-              <div>
-                <h2>Property</h2>
-                <p>How to stay ahead in property in 2019</p>
-              </div>
-              <div>
-                <h2>CBD</h2>
-                <p>How can you spot the real CBD from the fakes?</p>
+              <div style={{
+                display: `grid`,
+                gridTemplateColumns: `1fr 1fr 1fr`,
+                gridTemplateRows: `1fr 1fr`,
+                textAlign: `center`,
+                gridGap: `20px`,
+                padding: `0 0 70px 0`
+              }}>
+                <div style={sampleStyle}>
+                  <h2>Finance</h2>
+                  <p>What we can learn from the commodity dip</p>
+                </div>
+                <div style={sampleStyle}>
+                  <h2>SaaS</h2>
+                  <p>Boost your productivity with machine learning</p>
+                </div>
+                <div style={sampleStyle}>
+                  <h2>Social Media</h2>
+                  <p>What can marketers learn from the rise of TikTok?</p>
+                </div>
+                <div style={sampleStyle}>
+                  <h2>Recruitment</h2>
+                  <p>20 steps to landing your Dream Job</p>
+                </div>
+                <div style={sampleStyle}>
+                  <h2>Property</h2>
+                  <p>How to stay ahead in property in 2019</p>
+                </div>
+                <div style={sampleStyle}>
+                  <h2>CBD</h2>
+                  <p>How can you spot the real CBD from the fakes?</p>
+                </div>
               </div>
             </div>
           </section>
 
-          <section>
+          <section style={{
+            padding: `50px 0`,
+            textAlign: `center`
+          }}>
             <div style={containerStyle}>
               <h1>About Us</h1>
               <p>Our founders came from a copywriting and marketing background.</p>
@@ -147,42 +186,67 @@ const IndexPage = () => (
 
           <section style={tealBlock} id="contact-us">
             <div style={containerStyle}>
+            <div style={{textAlign: `center`}}>
               <h1>Contact Us</h1>
               <p>If you want to find out more or arrange a trial, simply fill in the form below.</p>
-              <form>
-                <label htmlFor="name">
-                  Name*:{' '}
-                  <input type="text" />
-                </label>
-                <label htmlFor="email">
-                  Email*:{' '}
-                  <input type="text" />
-                </label>
-                <label htmlFor="website">
-                  Company Website*:{' '}
-                  <input type="text" />
-                </label>
-                <label htmlFor="message">
-                  Message:{' '}
-                  <textarea />
-                </label>
-                <input type="submit" style={buttonStyle} value="Submit Form" />
+              </div>
+              <form style={{
+                boxSizing: `border-box`,
+                display: `grid`,
+                gridTemplateColumns: `1fr 1fr 1fr`,
+                gridGap: `20px`,
+              }}>
+                <div>
+                  <label htmlFor="name">
+                    Name*:
+                  <br />
+                    <input style={{ width: `100%`, background: `rgba(255,255,255,0.4)`, border: `none`, minHeight: `2rem` }} type="text" />
+                  </label>
+                </div>
+                <div>
+                  <label htmlFor="email">
+                    Email*:
+                  <br />
+                    <input style={{ width: `100%`, background: `rgba(255,255,255,0.4)`, border: `none`, minHeight: `2rem` }} type="text" />
+                  </label>
+                </div>
+                <div>
+                  <label htmlFor="website">
+                    Company Website*:
+                  <br />
+                    <input style={{ width: `100%`, background: `rgba(255,255,255,0.4)`, border: `none`, minHeight: `2rem` }} type="text" />
+                  </label>
+                </div>
+                <div style={{ gridColumn: `1/4`, width: `100%`,  }}>
+                  <label htmlFor="message">
+                    Message:
+                  <br />
+                    <textarea style={{ width: `100%`, background: `rgba(255,255,255,0.4)`, border: `none`, minHeight: `2rem` }} />
+                  </label>
+                </div>
+                <div style={{ gridColumn: `1/4`, width: `100%`, textAlign: `center` }}>
+                  <input type="submit" style={buttonStyle} value="Submit Form" />
+                </div>
               </form>
             </div>
           </section>
 
-          <div style={footerStyle}>
+          <footer style={footerStyle}>
             <div style={containerStyle}>
-              <hr />
-              <ul>
-                <li>Privacy Policy</li>
-                <li>Terms and Conditions</li>
-              </ul>
-              <img alt="Logo" />
-              <p>© triffic 2019</p>
-              <p>Website by Bret Cameron</p>
+              <div style={{ textAlign: `center` }}>
+                <hr style={{ background: `white`, }} />
+                <ul style={{
+                  listStyle: `none`
+                  }}>
+                  <li style={{ display: `inline-block`, padding: `0 10px`}}>Privacy Policy</li>
+                  <li style={{ display: `inline-block`, padding: `0 10px`}}>|</li>
+                  <li style={{ display: `inline-block`, padding: `0 10px`}}>Terms and Conditions</li>
+                </ul>
+                <img src={data.logoWhite.publicURL} alt="Logo" width="100" />
+                <p>© {new Date().getFullYear()} triffic<br />Website by Bret Cameron</p>
+              </div>
             </div>
-          </div>
+          </footer>
         </Layout>
       )
     }
