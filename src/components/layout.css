@@ -624,3 +624,19 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+/* Button Animation */
+
+button,
+.button {
+  transition: 200ms ease-out;
+}
+
+button:active,
+.button:active {
+  transform: scale(0.9);
+}
+
+b {
+  font-weight: 400;
+}

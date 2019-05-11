@@ -34,6 +34,12 @@ const IndexPage = () => (
         height: `700px`,
       }
 
+      const navlinkStyle = {
+        display: `inline-block`,
+        padding: `0 15px`,
+        cursor: `pointer`
+      }
+
       const titleStyle = {
         fontSize: `3.2rem`,
       }
@@ -49,8 +55,7 @@ const IndexPage = () => (
       }
 
       const subtitleStyle2 = {
-        fontSize: `1.25rem`,
-        lineHeight: `1.25rem`,
+        fontSize: `1.2rem`,
         padding: `0 0 10px 0`,
         fontWeight: `100`,
       }
@@ -68,6 +73,11 @@ const IndexPage = () => (
         padding: `30px`,
       }
 
+      const subContainerStyle = {
+        maxWidth: `600px`,
+        margin: `0 auto`,
+      }
+
       const buttonStyle = {
         backgroundColor: `#00b99b`,
         border: `none`,
@@ -78,12 +88,14 @@ const IndexPage = () => (
         fontWeight: `500`,
         fontSize: `1.1rem`,
         cursor: `pointer`,
+        minWidth: `180px`
       }
 
       const processBlockStyle = {
-        borderTop: `1px solid teal`,
-        borderBottom: `1px solid teal`,
-        padding: `20px 0 0 0`
+        borderTop: `2px solid teal`,
+        borderBottom: `2px solid teal`,
+        padding: `20px 0 0 0`,
+        // borderRadius: `5px`,
       }
 
       const h3ProcessStyle = {
@@ -94,12 +106,14 @@ const IndexPage = () => (
         background: `teal`,
         color: `white`,
         width: `100%`,
+        padding: `50px 0`
       }
 
       const gradientBlock = {
         background: `linear-gradient(-90deg, teal, #005980)`,
         color: `white`,
         width: `100%`,
+        padding: `50px 0`
       }
 
       const sampleStyle = {
@@ -109,17 +123,57 @@ const IndexPage = () => (
         background: `rgba(255, 255, 255, 0.05)`,
       }
 
+      const labelStyle = {
+        padding: `0 0 10px 0`,
+        fontWeight: `100`,
+      }
+
+      const inputStyle = {
+        width: `100%`,
+        background: `rgba(255,255,255,0.3)`, border: `none`,
+        fontSize: `1rem`,
+        fontWeight: `100`,
+        minHeight: `2.4rem`,
+        padding: `5px`,
+        color: `white`,
+        borderRadius: `4px`,
+      }
+
+      const textareaStyle = {
+        fontSize: `1rem`,
+        fontWeight: `100`,
+        width: `100%`,
+        background: `rgba(255,255,255,0.3)`, border: `none`,
+        minHeight: `6.6rem`,
+        maxHeight: `19.8rem`,
+        padding: `5px`,
+        color: `white`,
+        borderRadius: `4px`,
+        resize: `vertical`,
+      }
+
       const footerStyle = {
-        background: `linear-gradient(teal, #111111)`,
+        background: `linear-gradient(#001111, black)`,
         color: `white`,
         width: `100%`,
+        margin: `-20px 0 0 0`
       }
 
       return (
         <Layout>
           <section style={heroStyle}>
             <div style={containerStyle}>
-              <img src={data.logoWhite.publicURL} alt="Logo" width="120" />
+              <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start` }}>
+                <div><img src={data.logoWhite.publicURL} alt="Logo" width="120" /></div>
+                <div style={{ padding: `20px 0`, margin: `0 0 0 0` }}>
+                  <ul style={{ listStyle: `none` }}>
+                    <a style={{ color: `white`, }} href="#our-process"><li style={navlinkStyle}>Our Process</li></a>
+                    <a style={{ color: `white`, }} href="#sample-writing"><li style={navlinkStyle}>Sample Writing</li></a>
+                    <a style={{ color: `white`, }} href="#our-team"><li style={navlinkStyle}>Our Team</li></a>
+                    <a style={{ color: `white`, }} href="#contact-us"><li style={navlinkStyle}>Contact Us</li></a>
+                  </ul>
+                </div>
+              </div>
               <div style={{ maxWidth: `500px`, padding: `5px 0` }}>
                 <h1 style={titleStyle}>Business Blogging Made Easy</h1>
                 <p style={subtitleStyle}>Drive 97% more traffic to your website with high-quality, SEO-optimised blog posts.</p>
@@ -128,7 +182,7 @@ const IndexPage = () => (
             </div>
           </section>
 
-          <section style={{ margin: `-80px 0 20px 0` }}>
+          <section style={{ margin: `-100px 0 20px 0` }} id="our-process">
             <div style={containerStyle}>
               <div style={{ textAlign: `right` }}>
                 <h1 style={titleStyle2}>Our Process</h1>
@@ -158,14 +212,16 @@ const IndexPage = () => (
             </div>
           </section>
 
-          <section style={gradientBlock}>
+          <section style={gradientBlock} id="sample-writing">
             <div style={containerStyle}>
-              <div style={{
-                textAlign: `center`,
-                padding: `50px 0`
-              }}>
-                <h1>Sample Writing</h1>
-                <p>A few samples of our work. If you’d like to see more, or you’re looking for a specific vertical, feel free to <a href="#contact-us" style={{ color: `white` }}>get in touch</a>.</p>
+              <div style={subContainerStyle}>
+                <div style={{
+                  textAlign: `center`,
+                  padding: `0 0 50px 0`
+                }}>
+                  <h1 style={titleStyle2}>Sample Writing</h1>
+                  <p style={subtitleStyle2}>A few samples of our work. If you’d like to see more, or you’re looking for a specific vertical, feel free to <a href="#contact-us" style={{ color: `white` }}>get in touch</a>.</p>
+                </div>
               </div>
               <div style={{
                 display: `grid`,
@@ -173,7 +229,7 @@ const IndexPage = () => (
                 gridTemplateRows: `1fr 1fr`,
                 textAlign: `center`,
                 gridGap: `20px`,
-                padding: `0 0 70px 0`
+                padding: `0 0 20px 0`
               }}>
                 <div style={sampleStyle}>
                   <h2>Finance</h2>
@@ -189,7 +245,7 @@ const IndexPage = () => (
                 </div>
                 <div style={sampleStyle}>
                   <h2>Recruitment</h2>
-                  <p>20 steps to landing your Dream Job</p>
+                  <p>20 steps to landing your dream job</p>
                 </div>
                 <div style={sampleStyle}>
                   <h2>Property</h2>
@@ -206,56 +262,58 @@ const IndexPage = () => (
           <section style={{
             padding: `50px 0`,
             textAlign: `center`
-          }}>
+          }} id="our-team">
             <div style={containerStyle}>
-              <h1>About Us</h1>
-              <p>Our founders came from a copywriting and marketing background.</p>
-              <p>Together, they have 3 humanities degrees from the University of Cambridge, and they have worked on campaigns for clients including Facebook, EY, Universal Music and Deliveroo.</p>
+              <div style={subContainerStyle}>
+                <h1 style={titleStyle2}>Our Team</h1>
+                <p style={subtitleStyle2}>Our team have backgrounds in both copywriting and marketing (particularly SEO).</p><p style={subtitleStyle2}>Together, our founders have 3 humanities degrees from the University of Cambridge, and they have worked on campaigns for clients including <b>Facebook</b>, <b>EY</b>, <b>Universal Music</b> and <b>Deliveroo</b>.</p>
+              </div>
             </div>
           </section>
 
           <section style={tealBlock} id="contact-us">
             <div style={containerStyle}>
-              <div style={{ textAlign: `center` }}>
-                <h1>Contact Us</h1>
-                <p>If you want to find out more or arrange a trial, simply fill in the form below.</p>
+              <div style={subContainerStyle}>
+                <div style={{ textAlign: `center` }}>
+                  <h1 style={titleStyle2}>Contact Us</h1>
+                  <p style={subtitleStyle2}>If you want to find out more or arrange a trial, simply fill in the form below.</p>
+                </div>
               </div>
               <form style={{
                 boxSizing: `border-box`,
                 display: `grid`,
                 gridTemplateColumns: `1fr 1fr 1fr`,
-                gridGap: `20px`,
+                gridGap: `50px 20px`,
               }}>
                 <div>
                   <label htmlFor="name">
-                    Name*:
-                  <br />
-                    <input style={{ width: `100%`, background: `rgba(255,255,255,0.4)`, border: `none`, minHeight: `2rem` }} type="text" />
+                    <span style={labelStyle}>Name*</span>
+                    <br />
+                    <input style={inputStyle} type="text" />
                   </label>
                 </div>
                 <div>
                   <label htmlFor="email">
-                    Email*:
-                  <br />
-                    <input style={{ width: `100%`, background: `rgba(255,255,255,0.4)`, border: `none`, minHeight: `2rem` }} type="text" />
+                    <span style={labelStyle}>Email*</span>
+                    <br />
+                    <input style={inputStyle} type="text" />
                   </label>
                 </div>
                 <div>
                   <label htmlFor="website">
-                    Company Website*:
-                  <br />
-                    <input style={{ width: `100%`, background: `rgba(255,255,255,0.4)`, border: `none`, minHeight: `2rem` }} type="text" />
+                    <span style={labelStyle}>Company Website*</span>
+                    <br />
+                    <input style={inputStyle} type="text" />
                   </label>
                 </div>
                 <div style={{ gridColumn: `1/4`, width: `100%`, }}>
                   <label htmlFor="message">
-                    Message:
-                  <br />
-                    <textarea style={{ width: `100%`, background: `rgba(255,255,255,0.4)`, border: `none`, minHeight: `2rem` }} />
+                    <span style={labelStyle}>Tell us more about what you're trying to achieve with your blog</span>                  <br />
+                    <textarea style={textareaStyle} />
                   </label>
                 </div>
                 <div style={{ gridColumn: `1/4`, width: `100%`, textAlign: `center` }}>
-                  <input type="submit" style={buttonStyle} value="Submit Form" />
+                  <input type="submit" class="button" style={buttonStyle} value="Submit Form" />
                 </div>
               </form>
             </div>
@@ -264,16 +322,16 @@ const IndexPage = () => (
           <footer style={footerStyle}>
             <div style={containerStyle}>
               <div style={{ textAlign: `center` }}>
-                <hr style={{ background: `white`, }} />
                 <ul style={{
-                  listStyle: `none`
+                  listStyle: `none`,
+                  padding: `0 0 20px 0`,
+                  margin: `0`
                 }}>
-                  <li style={{ display: `inline-block`, padding: `0 10px` }}>Privacy Policy</li>
-                  <li style={{ display: `inline-block`, padding: `0 10px` }}>|</li>
-                  <li style={{ display: `inline-block`, padding: `0 10px` }}>Terms and Conditions</li>
+                  <li>Privacy Policy</li>
+                  <li>Terms and Conditions</li>
                 </ul>
                 <img src={data.logoWhite.publicURL} alt="Logo" width="100" />
-                <p>© {new Date().getFullYear()} triffic<br />Website by Bret Cameron</p>
+                <p style={{ fontSize: `0.9rem`, fontWeight: `100` }}>© {new Date().getFullYear()} triffic<br />Website by Bret Cameron</p>
               </div>
             </div>
           </footer>
