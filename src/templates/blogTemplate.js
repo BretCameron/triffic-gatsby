@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 
 import Header from "../components/header"
 import "../components/layout.scss"
@@ -17,32 +17,37 @@ const blogContainerStyle = {
   padding: `50px 15px`,
 }
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
-  return (
-    <>
-      <Header />
-      <div style={blogContainerStyle}>
-        <div className="blog-post">
-          <div style={{ textAlign: `center` }}>
-            <h1>{frontmatter.title}</h1>
-            <h2>{frontmatter.subtitle}</h2>
-            <p><hr /><i>X minute read</i></p><hr />
-          </div>
+export default class Template extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-          <div className="blog-content">
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
+  render() {
+    const { data } = this.props;
+    const { markdownRemark } = data // data.markdownRemark holds our post data
+    const { frontmatter, html } = markdownRemark
+    return (
+      <>
+        <Header />
+        <div style={blogContainerStyle}>
+          <div className="blog-post">
+            <div style={{ textAlign: `center` }}>
+              <h1>{frontmatter.title}</h1>
+              <h2>{frontmatter.subtitle}</h2>
+              <p><hr /><i>X minute read</i></p><hr />
+            </div>
+
+            <div className="blog-content">
+              <div
+                className="blog-post-content"
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  }
 }
 
 export const pageQuery = graphql`

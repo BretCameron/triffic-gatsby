@@ -166,7 +166,7 @@ const IndexPage = () => (
             {/* <Header /> */}
             <div style={containerStyle}>
               <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start` }}>
-                <div><img src={data.logoWhite.publicURL} alt="Logo" width="120" /></div>
+                <div><Link to="/"><img src={data.logoWhite.publicURL} alt="Logo" width="120" /></Link></div>
                 <div style={{ padding: `20px 0`, margin: `0 0 0 0` }}>
                   <ul style={{ listStyle: `none` }}>
                     <a style={{ color: `white`, }} href="#our-process"><li style={navlinkStyle}>Our Process</li></a>
@@ -253,10 +253,10 @@ const IndexPage = () => (
                   <h2>Property</h2>
                   <p>How to stay ahead in property in 2019</p>
                 </div>
-                <div style={sampleStyle}>
+                <Link to="/samples/CBD" style={{ color: `white`, textDecoration: `none` }}><div style={sampleStyle}>
                   <h2>CBD</h2>
                   <p>How can you spot the real CBD from the fakes?</p>
-                </div>
+                </div></Link>
               </div>
             </div>
           </section>

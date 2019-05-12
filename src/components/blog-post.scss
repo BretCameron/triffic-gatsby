@@ -9,6 +9,9 @@
     color: darkgrey;
     font-weight: 200;
   }
+
+  margin: 0;
+  padding: 0;
 }
 
 .blog-content {
@@ -19,7 +22,7 @@
     font-size: 1rem;
   }
 
-  p:not(:first-of-type) {
-    text-indent: 2rem;
-  }
+  // p:not(:first-of-type) {
+  //   // text-indent: 2rem;
+  // }
 }
