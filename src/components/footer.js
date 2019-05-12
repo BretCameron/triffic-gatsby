@@ -15,13 +15,15 @@ const containerStyle = {
 }
 
 const footerStyle = {
-  background: `linear-gradient(30deg, #111, #005980, #008080)`,
+  // background: `linear-gradient(30deg, #111, #002030, #005980, #005980, #008080)`,
+  // background: `linear-gradient(30deg, #111, #005980, #008080)`,
+  background: `linear-gradient(30deg, #111, #222)`,
   color: `white`,
   width: `100%`,
-  margin: `100px 0 0 0`
+  margin: `0 0 0 0`
 }
 
-const Header = ({ siteTitle }) => (
+const Footer = ({ siteTitle }) => (
   <StaticQuery query={graphql`
       query {
         logoWhite: file(relativePath: {eq: "white_logo.svg"}) {
@@ -42,10 +44,11 @@ const Header = ({ siteTitle }) => (
               <ul style={{
                 listStyle: `none`,
                 padding: `0 0 20px 0`,
-                margin: `0`
+                margin: `0`,
+                fontSize: `0.9rem`
               }}>
-                <li>Privacy Policy</li>
-                <li>Terms and Conditions</li>
+                <Link to="/privacy-policy" style={{color: `white`, textDecoration: `none`}}><li>Privacy Policy</li></Link>
+                  <Link to="/terms" style={{color: `white`, textDecoration: `none`}}><li>Terms and Conditions</li></Link>
               </ul>
               <Link to="/"><img src={data.logoWhite.publicURL} alt="Logo" width="100" /></Link>
               <p style={{ fontSize: `0.9rem`, fontWeight: `100` }}>© {new Date().getFullYear()} triffic<br />Website by Bret Cameron</p>
@@ -58,12 +61,12 @@ const Header = ({ siteTitle }) => (
   />
 )
 
-Header.propTypes = {
+Footer.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+Footer.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default Footer

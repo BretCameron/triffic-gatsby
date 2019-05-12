@@ -5,6 +5,9 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Header from "../components/header"
+import Slider from "../components/Slider"
+import Footer from "../components/footer"
+
 
 const IndexPage = () => (
   <StaticQuery query={graphql`
@@ -238,8 +241,8 @@ const IndexPage = () => (
                   <p>What we can learn from the commodity dip</p>
                 </div>
                 <div style={sampleStyle}>
-                  <h2>SaaS</h2>
-                  <p>Boost your productivity with machine learning</p>
+                  <h2>Blockchain</h2>
+                  <p>How blockchain technology can improve your supply chain</p>
                 </div>
                 <Link to="/samples/social" style={{
                   color: `white`, textDecoration: `none`
@@ -263,17 +266,44 @@ const IndexPage = () => (
             </div>
           </section>
 
-          <section style={{
-            padding: `50px 0`,
-            textAlign: `center`
-          }} id="our-team">
+          <section>
             <div style={containerStyle}>
-              <div style={subContainerStyle}>
+              <div style={{
+                padding: `50px 0 0 0`,
+                textAlign: `left`
+              }} id="our-team">
+                {/* <div style={subContainerStyle}> */}
                 <h1 style={titleStyle2}>Our Team</h1>
                 <p style={subtitleStyle2}>Our team have backgrounds in both copywriting and marketing (particularly SEO).</p><p style={subtitleStyle2}>Together, our founders have 3 humanities degrees from the University of Cambridge, and they have worked on campaigns for clients including <b>Facebook</b>, <b>EY</b>, <b>Universal Music</b> and <b>Deliveroo</b>.</p>
+                {/* </div> */}
+              </div>
+
+              <div style={{
+                display: `grid`,
+                justifyContent: `right`,
+                gridTemplateColumns: `1fr 1fr`,
+                gridTemplateRows: `1fr`,
+                textAlign: `left`,
+                gridGap: `0 50px`,
+                padding: `0 0 50px 0`
+              }}>
+                <div style={{ height: `100%`, borderBottom: `1px solid lightgrey`, borderTop: `1px solid lightgrey`, padding: `20px 0 0 0` }}>
+                  <h3>Bret Cameron</h3>
+                  <h4>Co-Founder, Head of SEO</h4>
+                  <p style={{ fontWeight: `100`, fontSize: `1.05rem` }}>Bret's background is in marketing. He was Head of Marketing at social media startup, Fanbytes, and managed campaigns for companies including Warner Music, Unviersal Music and Deliveroo.</p>
+                  <p style={{ fontWeight: `100`, fontSize: `1.05rem` }}>Bret has a Master's in Medieval Languages from Cambridge, and has written for <i>The Drum</i>, among other industry publications.</p>
+                </div>
+                <div style={{ height: `100%`, borderBottom: `1px solid lightgrey`, borderTop: `1px solid lightgrey`, padding: `20px 0 0 0` }}>
+                  <h3>Charlotte Gifford</h3>
+                  <h4>Co-Founder, Head of Copywriting</h4>
+                  <p style={{ fontWeight: `100`, fontSize: `1.05rem` }}>Charlotte's background is in copywriting. She was a copywriter and creative at RD Content, where she worked on campaigns for Facebook, EY, Cirque du Soleil and more.</p>
+                  <p style={{ fontWeight: `100`, fontSize: `1.05rem` }}>Charlotte has a first class degree in English from the University of Cambridge.</p>
+                </div>
               </div>
             </div>
           </section>
+
+          <Slider />
 
           <section style={tealBlock} id="contact-us">
             <div style={containerStyle}>
@@ -327,22 +357,7 @@ const IndexPage = () => (
             </div>
           </section>
 
-          <footer style={footerStyle}>
-            <div style={containerStyle}>
-              <div style={{ textAlign: `center` }}>
-                <ul style={{
-                  listStyle: `none`,
-                  padding: `0 0 20px 0`,
-                  margin: `0`
-                }}>
-                  <li>Privacy Policy</li>
-                  <li>Terms and Conditions</li>
-                </ul>
-                <img src={data.logoWhite.publicURL} alt="Logo" width="100" />
-                <p style={{ fontSize: `0.9rem`, fontWeight: `100` }}>© {new Date().getFullYear()} triffic<br />Website by Bret Cameron</p>
-              </div>
-            </div>
-          </footer>
+          <Footer />
         </Layout >
       )
     }

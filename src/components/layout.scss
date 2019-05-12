@@ -641,7 +641,7 @@ b {
   font-weight: 400;
 }
 
-ul > a > li:hover {
+ul > a > li:hover, a:hover {
   text-decoration: underline;
 }
 
