@@ -38,9 +38,12 @@ export default class Blog extends React.Component {
             <div style={{ textAlign: `center` }}>
               <h1>{this.props.title}</h1>
               <h2>{this.props.subtitle}</h2>
-              <p style={{ fontSize: `0.9rem` }}><i>{Math.ceil(this.state.wordCount / 200)} minute read</i></p>
+              <p>
+                <span style={{ fontSize: `0.9rem`, textTransform: `uppercase` }}>{Math.ceil(this.state.wordCount / 200)} minute read</span>
+              <div style={{ fontSize: `0.8rem`, fontStyle: `italic` }} dangerouslySetInnerHTML={{ __html: this.props.publishedIn ? `Originally published in <a href="${this.props.publishedURL}">${this.props.publishedIn}</a>.` : ''}}></div>
+              </p>
               <hr />
-              <Tags keywords="CBD, cannabis, cannabidol, medicine, health, wellness" />
+              <Tags keywords={this.props.keywords} />
               <hr />
             </div>
           </div>
@@ -51,7 +54,7 @@ export default class Blog extends React.Component {
             width: `100%`,
             maxHeight: `50vh`,
             objectFit: `cover`,
-            objectPosition: `center`,
+            objectPosition: `center top`,
             margin: 0,
             padding: 0,
           }}

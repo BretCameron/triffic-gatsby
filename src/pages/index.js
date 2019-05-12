@@ -241,10 +241,12 @@ const IndexPage = () => (
                   <h2>SaaS</h2>
                   <p>Boost your productivity with machine learning</p>
                 </div>
-                <div style={sampleStyle}>
-                  <h2>Social Media</h2>
-                  <p>What can marketers learn from the rise of TikTok?</p>
-                </div>
+                <Link to="/samples/social" style={{
+                  color: `white`, textDecoration: `none`
+                }}><div className="sample">
+                    <h2>Social Media</h2>
+                    <p>What do users really think about Snapchat’s redesign?</p>
+                  </div></Link>
                 <div style={sampleStyle}>
                   <h2>Recruitment</h2>
                   <p>20 steps to landing your dream job</p>
@@ -253,9 +255,9 @@ const IndexPage = () => (
                   <h2>Property</h2>
                   <p>How to stay ahead in property in 2019</p>
                 </div>
-                <Link to="/samples/CBD" style={{ color: `white`, textDecoration: `none` }}><div style={sampleStyle}>
+                <Link to="/samples/CBD" style={{ color: `white`, textDecoration: `none` }}><div className="sample">
                   <h2>CBD</h2>
-                  <p>How can you spot the real CBD from the fakes?</p>
+                  <p>With the CBD industry exploding, how do you spot fake oils?</p>
                 </div></Link>
               </div>
             </div>

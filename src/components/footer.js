@@ -28,10 +28,10 @@ const Header = ({ siteTitle }) => (
           publicURL
           relativePath
         }
-        logoColour: file(relativePath: {eq: "colour_logo.svg"}) {
-          publicURL
-          relativePath
-        }
+        # logoColour: file(relativePath: {eq: "colour_logo.svg"}) {
+        #   publicURL
+        #   relativePath
+        # }
       }
     `}
     render={data => {

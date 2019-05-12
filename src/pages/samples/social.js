@@ -26,6 +26,7 @@ const CBD = () => (
   />
 )
 
+
 const postQuery = graphql`
         {
             content: file(name: {eq: "CBD"}) {

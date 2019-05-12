@@ -644,3 +644,17 @@ b {
 ul > a > li:hover {
   text-decoration: underline;
 }
+
+.sample {
+  border: 1px solid white;
+  padding: 20px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: 100ms ease-out;
+  height: 100%;
+}
+
+.sample:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #111;
+}

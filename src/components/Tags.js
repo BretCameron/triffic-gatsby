@@ -4,9 +4,10 @@ const Tags = (props) => {
   const { keywords } = props;
   return (
     <>
-      {keywords.split(", ").map(keyword => {
+      {keywords.split(", ").map((keyword, index) => {
         return (
           <div
+            key={index}
             style={{
               display: `inline-block`,
               fontSize: `0.9rem`,

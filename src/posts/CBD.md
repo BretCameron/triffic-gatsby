@@ -1,9 +1,12 @@
 ---
 path: "/sample/CBD"
-date: "2017-11-07"
+date: "2019-03-31"
 title: "With the CBD industry exploding, how do you spot fake oils?"
 subtitle: ""
 image: "https://cdn-images-1.medium.com/max/1200/1*9TY34ocUjYItkYy2Py7t0w.jpeg"
+keywords: "CBD, cannabis, cannabidol, medicine, health, wellness"
+publishedIn: ""
+publishedURL: ""
 ---
 
 There’s no doubt about it: CBD oil is the next Big Thing in health and wellness. In the hipster coffee houses of major cities, adding CBD to your morning latte is as commonplace as adding a splash of milk. The actress Kristen Bell apparently uses it to ease her muscles after a workout. It comes in lotions, drinks, vapours, gummy bears — even dog biscuits — and for many people it’s becoming a staple part of their routine for treating insomnia or anxiety. It’s poised to take the wellness industry by storm, and it looks like this is the only the beginning, with the industry expected to grow exponentially over the next few years.
