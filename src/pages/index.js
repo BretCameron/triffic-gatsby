@@ -4,6 +4,7 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Header from "../components/header"
 
 const IndexPage = () => (
   <StaticQuery query={graphql`
@@ -162,6 +163,7 @@ const IndexPage = () => (
       return (
         <Layout>
           <section style={heroStyle}>
+            {/* <Header /> */}
             <div style={containerStyle}>
               <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start` }}>
                 <div><img src={data.logoWhite.publicURL} alt="Logo" width="120" /></div>
@@ -279,12 +281,16 @@ const IndexPage = () => (
                   <p style={subtitleStyle2}>If you want to find out more or arrange a trial, simply fill in the form below.</p>
                 </div>
               </div>
-              <form style={{
-                boxSizing: `border-box`,
-                display: `grid`,
-                gridTemplateColumns: `1fr 1fr 1fr`,
-                gridGap: `50px 20px`,
-              }}>
+              <form
+                name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" id="contact"
+                style={{
+                  boxSizing: `border-box`,
+                  display: `grid`,
+                  gridTemplateColumns: `1fr 1fr 1fr`,
+                  gridGap: `50px 20px`,
+                }}>
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
                 <div>
                   <label htmlFor="name">
                     <span style={labelStyle}>Name*</span>

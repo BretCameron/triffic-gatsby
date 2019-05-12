@@ -640,3 +640,7 @@ button:active,
 b {
   font-weight: 400;
 }
+
+ul > a > li:hover {
+  text-decoration: underline;
+}
