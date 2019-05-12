@@ -5,7 +5,7 @@ import Layout from "../../components/layout"
 import Header from "../../components/header"
 import Blog from "../../components/Blog"
 
-const CBD = () => (
+const social = () => (
   <StaticQuery
     query={postQuery}
     render={data => {
@@ -29,7 +29,7 @@ const CBD = () => (
 
 const postQuery = graphql`
         {
-            content: file(name: {eq: "CBD"}) {
+            content: file(name: {eq: "SocialMedia"}) {
               childMarkdownRemark {
                 frontmatter {
                   title
@@ -46,4 +46,4 @@ const postQuery = graphql`
             }
         }`
 
-export default CBD
+export default social
