@@ -680,12 +680,12 @@ a:hover {
 
 .arrow-container-left {
   justify-content: flex-start;
-    padding: 0 0 0 10px;
+  padding: 0 0 0 10px;
 }
 
 .arrow-container-right {
   justify-content: flex-end;
-    padding: 0 10px 0 0;
+  padding: 0 10px 0 0;
 }
 
 .arrow-container-left:hover {
@@ -710,32 +710,129 @@ a:hover {
 }
 
 .slider-progress {
-    display: block;
-    align-self: flex-end; 
-    padding: 20px; 
-    color: white; 
-    list-style: none; 
-    margin: 0; 
-    font-size: 1.5rem;
-  }
+  display: block;
+  align-self: flex-end;
+  padding: 20px;
+  color: white;
+  list-style: none;
+  margin: 0;
+  font-size: 1.5rem;
+}
 
 @media only screen and (max-width: 767px) {
-.contact-form {
-  display: block;
-  box-sizing: border-box;
+  .contact-form {
+    display: block;
+    box-sizing: border-box;
 
-  input {
-    margin: 0 0 20px 0;
+    input {
+      margin: 0 0 20px 0;
+    }
+
+    input.button {
+      margin: 50px 0 0 0;
+    }
   }
-
-  input.button {
-    margin: 50px 0 0 0;
-  }  
-}
 }
 
 @media only screen and (max-width: 400px) {
-      .slider-progress {
-        display: none;
-      }
+  .slider-progress {
+    display: none;
+  }
+}
+
+// Sample Writing
+
+.sample-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+  grid-gap: 20px;
+  padding: 0 0 20px 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .sample-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .sample-grid {
+    display: block;
+
+    div {
+      margin: 0 0 20px 0;
     }
+  }
+}
+
+// Our Team
+
+.our-team-grid {
+  display: grid;
+  justify-content: right;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  text-align: left;
+  grid-gap: 0 50px;
+  padding: 0 0 50px 0;
+
+  div:first-of-type {
+    border-top: 1px solid lightgray;
+    // border-bottom: 1px solid lightgray;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .our-team-grid {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  .our-team-grid {
+    div:first-of-type {
+      border-bottom: 1px solid lightgray;
+    }
+  }
+}
+
+//  Our Process
+
+.our-process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  div {
+    border-top: 1px solid teal;
+    border-bottom: 1px solid teal;
+    padding: 20px 0 0 0;
+  }
+}
+
+.our-process-heading {
+  text-align: right;
+}
+
+@media only screen and (max-width: 480px) {
+  .our-process-heading {
+    text-align: center;
+  }
+
+  .our-process-grid {
+    display: block;
+    text-align: center;
+
+    div {
+      border-top: none;
+      border-bottom: 1px solid teal;
+    }
+
+    div:first-of-type {
+      border-top: 1px solid teal;
+    }
+  }
+}

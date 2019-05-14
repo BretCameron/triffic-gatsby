@@ -8,6 +8,7 @@ import Slider from "../components/Slider"
 import ContactUs from "../components/ContactUs"
 import Footer from "../components/footer"
 
+// To do: make header mobile friendly, and at really small widths the slider covers up the section below
 
 const IndexPage = () => (
   <StaticQuery query={graphql`
@@ -35,7 +36,8 @@ const IndexPage = () => (
         backgroundSize: `cover`,
         color: `white`,
         width: `100%`,
-        height: `700px`,
+        height: `auto`,
+        padding: `0 0 150px 0`
       }
 
       const navlinkStyle = {
@@ -74,7 +76,7 @@ const IndexPage = () => (
       const containerStyle = {
         maxWidth: `1000px`,
         margin: `0 auto`,
-        padding: `30px`,
+        padding: `0 15px`,
       }
 
       const subContainerStyle = {
@@ -93,13 +95,6 @@ const IndexPage = () => (
         fontSize: `1.1rem`,
         cursor: `pointer`,
         minWidth: `180px`
-      }
-
-      const processBlockStyle = {
-        borderTop: `2px solid teal`,
-        borderBottom: `2px solid teal`,
-        padding: `20px 0 0 0`,
-        // borderRadius: `5px`,
       }
 
       const h3ProcessStyle = {
@@ -146,26 +141,22 @@ const IndexPage = () => (
 
           <section style={{ margin: `-100px 0 20px 0` }} id="our-process">
             <div style={containerStyle}>
-              <div style={{ textAlign: `right` }}>
+              <div className="our-process-heading">
                 <h1 style={titleStyle2}>Our Process</h1>
                 <p style={subtitleStyle2}>Our 3-step formula for blogging success.</p>
               </div>
-              <div style={{
-                display: `grid`,
-                gridTemplateColumns: `1fr 1fr 1fr`,
-                gridGap: `20px`,
-              }}>
-                <div style={processBlockStyle}>
+              <div className="our-process-grid">
+                <div>
                   <h2 style={numberStyle}>1.</h2>
                   <h3 style={h3ProcessStyle}>Define your goals</h3>
                   <p>We’ll start by establishing your core goals, the keywords you want to rank for    and your brand voice.</p>
                 </div>
-                <div style={processBlockStyle}>
+                <div>
                   <h2 style={numberStyle}>2.</h2>
                   <h3 style={h3ProcessStyle}>Create your blueprint</h3>
                   <p>Together, we’ll fine-tune a content plan – usually covering the next 3-6 months – based on your specific goals.</p>
                 </div>
-                <div style={processBlockStyle}>
+                <div>
                   <h2 style={numberStyle}>3.</h2>
                   <h3 style={h3ProcessStyle}>Hit publish</h3>
                   <p>We’ll send you your content on a regular schedule, and – after any feedback – all you have to do is press publish!</p>
@@ -185,14 +176,7 @@ const IndexPage = () => (
                   <p style={subtitleStyle2}>A few samples of our work. If you’d like to see more, or you’re looking for a specific vertical, feel free to <a href="#contact-us" style={{ color: `white` }}>get in touch</a>.</p>
                 </div>
               </div>
-              <div style={{
-                display: `grid`,
-                gridTemplateColumns: `1fr 1fr 1fr`,
-                gridTemplateRows: `1fr 1fr`,
-                textAlign: `center`,
-                gridGap: `20px`,
-                padding: `0 0 20px 0`
-              }}>
+              <div className="sample-grid">
                 <div style={sampleStyle}>
                   <h2>Finance</h2>
                   <p>What we can learn from the commodity dip</p>
@@ -235,16 +219,8 @@ const IndexPage = () => (
                 {/* </div> */}
               </div>
 
-              <div style={{
-                display: `grid`,
-                justifyContent: `right`,
-                gridTemplateColumns: `1fr 1fr`,
-                gridTemplateRows: `1fr`,
-                textAlign: `left`,
-                gridGap: `0 50px`,
-                padding: `0 0 50px 0`
-              }}>
-                <div style={{ height: `100%`, borderBottom: `1px solid lightgrey`, borderTop: `1px solid lightgrey`, padding: `20px 0 0 0` }}>
+              <div className="our-team-grid">
+                <div style={{ height: `100%`, padding: `20px 0 0 0` }}>
                   <h3>Bret Cameron</h3>
                   <h4>Co-Founder, Head of SEO</h4>
                   <p style={{ fontWeight: `100`, fontSize: `1.05rem` }}>Bret's background is in marketing. He was Head of Marketing at social media startup, Fanbytes, and managed campaigns for companies including Warner Music, Unviersal Music and Deliveroo.</p>
@@ -262,8 +238,8 @@ const IndexPage = () => (
 
           <Slider />
 
-<ContactUs />
-       
+          <ContactUs />
+
           <Footer />
         </Layout >
       )
