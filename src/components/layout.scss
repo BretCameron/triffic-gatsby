@@ -665,25 +665,27 @@ a:hover {
 
 .arrow-container-left,
 .arrow-container-right {
-  height: 50vh;
-  min-height: 500px;
+  // height: 50vh;
+  height: 500px;
   cursor: pointer;
   width: 20%;
+  min-width: 100px;
   transition: 200ms ease-out;
   color: white;
   display: flex;
   align-items: center;
   opacity: 0;
-  padding: 80px;
   pointer-events: all;
 }
 
 .arrow-container-left {
   justify-content: flex-start;
+    padding: 0 0 0 10px;
 }
 
 .arrow-container-right {
   justify-content: flex-end;
+    padding: 0 10px 0 0;
 }
 
 .arrow-container-left:hover {
@@ -697,3 +699,43 @@ a:hover {
   background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
   opacity: 1;
 }
+
+// FORM
+
+.contact-form {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px 20px;
+}
+
+.slider-progress {
+    display: block;
+    align-self: flex-end; 
+    padding: 20px; 
+    color: white; 
+    list-style: none; 
+    margin: 0; 
+    font-size: 1.5rem;
+  }
+
+@media only screen and (max-width: 767px) {
+.contact-form {
+  display: block;
+  box-sizing: border-box;
+
+  input {
+    margin: 0 0 20px 0;
+  }
+
+  input.button {
+    margin: 50px 0 0 0;
+  }  
+}
+}
+
+@media only screen and (max-width: 400px) {
+      .slider-progress {
+        display: none;
+      }
+    }

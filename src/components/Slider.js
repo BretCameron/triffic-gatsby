@@ -17,6 +17,7 @@ const sliderData = {
   slide1: {
     fluid: "typewriter",
     align: "left",
+    // The following entry must follow 6-digit hexadecimal notation
     color: `#FFFFFF`,
     backgroundColor: "#040e18",
     description: "Companies that published 16+ blog posts per month got almost 3.5 times more traffic than companies that published zero to four monthly posts.",
@@ -26,6 +27,7 @@ const sliderData = {
   slide2: {
     fluid: "desk",
     align: "left",
+    // The following entry must follow 6-digit hexadecimal notation
     color: `#000000`,
     backgroundColor: "#040e18",
     description: "B2B companies that blogged 11+ times per month had almost three times more traffic than those blogging 0-1 times per month.",
@@ -35,6 +37,7 @@ const sliderData = {
   slide3: {
     fluid: "typewriter2",
     align: "center",
+    // The following entry must follow 6-digit hexadecimal notation
     color: `#FFFFFF`,
     backgroundColor: "#040e18",
     description: "One in ten blog posts are compounding, meaning organic search increases their traffic over time.",
@@ -88,14 +91,14 @@ class Slider extends React.Component {
     this.setState(newState);
   }
 
-goToDirectSlide(e) {
-  const goToSlide = Number(e.target.id.replace("circle-",""));
-  const newState = this.state;
+  goToDirectSlide(e) {
+    const goToSlide = Number(e.target.id.replace("circle-", ""));
+    const newState = this.state;
     if (goToSlide !== this.state.slide) {
       newState.slide = goToSlide;
     };
     this.setState(newState);
-}
+  }
 
   populateSlides(slides) {
     return slides.map((slide, index) => {
@@ -117,7 +120,7 @@ goToDirectSlide(e) {
 
   sliderProgress() {
     return slides.map((el, index) => {
-      return <li id={`circle-${index}`} onClick={this.goToDirectSlide} style={{pointerEvents: `all`, cursor: `pointer`, display: `inline-block`, padding: `5px`, opacity: `${index === this.state.slide ? 1 : 0.5}`}}>•</li>
+      return <li id={`circle-${index}`} onClick={this.goToDirectSlide} style={{ pointerEvents: `all`, cursor: `pointer`, display: `inline-block`, padding: `5px`, opacity: `${index === this.state.slide ? 1 : 0.5}`, color: `${slides[this.state.slide].color}`, userSelect: `none` }}>•</li>
     });
   }
 
@@ -125,25 +128,25 @@ goToDirectSlide(e) {
     return (
       <StaticQuery query={graphql`
       query {
-  typewriter: file(relativePath: {eq: "typewriter.jpg"}) {
-    childImageSharp {
-      fluid(quality: 90, maxWidth: 2000) {
+        typewriter: file(relativePath: { eq: "typewriter.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 2000) {
         ...GatsbyImageSharpFluid_withWebp
       }
-    }
-  }
-  rightarrow: file(relativePath: {eq: "right-arrow.svg"}) {
-    relativePath
-    absolutePath
-    publicURL
-  }
-  leftarrow: file(relativePath: {eq: "left-arrow.svg"}) {
-    relativePath
-    absolutePath
-    publicURL
-  }
+}
+}
+rightarrow: file(relativePath: { eq: "right-arrow.svg" }) {
+  relativePath
+  absolutePath
+  publicURL
+}
+leftarrow: file(relativePath: { eq: "left-arrow.svg" }) {
+  relativePath
+  absolutePath
+  publicURL
+}
       }
-    `}
+`}
         render={data => {
           return (
             <>
@@ -172,7 +175,7 @@ goToDirectSlide(e) {
               </section>
 
               <div style={{
-                width: `100%`,
+                width: `100% `,
                 position: `absolute`,
                 display: `flex`,
                 justifyContent: `space-between`,
@@ -186,7 +189,7 @@ goToDirectSlide(e) {
                   onClick={this.handlePreviousSlide}>
                   <img src={data.leftarrow.publicURL} alt="Next Slide" />
                 </div>
-                <ul style={{ alignSelf: `flex-end`, padding: `20px`, color: `white`, listStyle: `none`, margin: 0, fontSize: `1.5rem` }}>
+                <ul className="slider-progress">
                   {this.sliderProgress()}
                 </ul>
                 <div className="arrow-container-right"

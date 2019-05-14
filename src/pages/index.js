@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 // import Image from "../components/image"
 // import SEO from "../components/seo"
 import Slider from "../components/Slider"
+import ContactUs from "../components/ContactUs"
 import Footer from "../components/footer"
 
 
@@ -105,13 +106,6 @@ const IndexPage = () => (
         minHeight: `3rem`,
       }
 
-      const tealBlock = {
-        background: `teal`,
-        color: `white`,
-        width: `100%`,
-        padding: `50px 0`
-      }
-
       const gradientBlock = {
         background: `linear-gradient(-90deg, teal, #005980)`,
         color: `white`,
@@ -124,35 +118,6 @@ const IndexPage = () => (
         padding: `20px`,
         borderRadius: `5px`,
         background: `rgba(255, 255, 255, 0.05)`,
-      }
-
-      const labelStyle = {
-        padding: `0 0 10px 0`,
-        fontWeight: `100`,
-      }
-
-      const inputStyle = {
-        width: `100%`,
-        background: `rgba(255,255,255,0.3)`, border: `none`,
-        fontSize: `1rem`,
-        fontWeight: `100`,
-        minHeight: `2.4rem`,
-        padding: `5px`,
-        color: `white`,
-        borderRadius: `4px`,
-      }
-
-      const textareaStyle = {
-        fontSize: `1rem`,
-        fontWeight: `100`,
-        width: `100%`,
-        background: `rgba(255,255,255,0.3)`, border: `none`,
-        minHeight: `6.6rem`,
-        maxHeight: `19.8rem`,
-        padding: `5px`,
-        color: `white`,
-        borderRadius: `4px`,
-        resize: `vertical`,
       }
 
       return (
@@ -297,58 +262,8 @@ const IndexPage = () => (
 
           <Slider />
 
-          <section style={tealBlock} id="contact-us">
-            <div style={containerStyle}>
-              <div style={subContainerStyle}>
-                <div style={{ textAlign: `center` }}>
-                  <h1 style={titleStyle2}>Contact Us</h1>
-                  <p style={subtitleStyle2}>If you want to find out more or arrange a trial, simply fill in the form below.</p>
-                </div>
-              </div>
-              <form
-                name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" id="contact"
-                style={{
-                  boxSizing: `border-box`,
-                  display: `grid`,
-                  gridTemplateColumns: `1fr 1fr 1fr`,
-                  gridGap: `50px 20px`,
-                }}>
-                <input type="hidden" name="form-name" value="contact" />
-                <input type="hidden" name="bot-field" />
-                <div>
-                  <label htmlFor="name">
-                    <span style={labelStyle}>Name*</span>
-                    <br />
-                    <input style={inputStyle} type="text" />
-                  </label>
-                </div>
-                <div>
-                  <label htmlFor="email">
-                    <span style={labelStyle}>Email*</span>
-                    <br />
-                    <input style={inputStyle} type="text" />
-                  </label>
-                </div>
-                <div>
-                  <label htmlFor="website">
-                    <span style={labelStyle}>Company Website*</span>
-                    <br />
-                    <input style={inputStyle} type="text" />
-                  </label>
-                </div>
-                <div style={{ gridColumn: `1/4`, width: `100%`, }}>
-                  <label htmlFor="message">
-                    <span style={labelStyle}>Tell us more about what you're trying to achieve with your blog</span>                  <br />
-                    <textarea style={textareaStyle} />
-                  </label>
-                </div>
-                <div style={{ gridColumn: `1/4`, width: `100%`, textAlign: `center` }}>
-                  <input type="submit" className="button" style={buttonStyle} value="Submit Form" />
-                </div>
-              </form>
-            </div>
-          </section>
-
+<ContactUs />
+       
           <Footer />
         </Layout >
       )
