@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 
-import Layout from "../../components/layout"
-import Header from "../../components/header"
 import Blog from "../../components/Blog"
 
 const social = () => (

@@ -2,12 +2,6 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Header from "../components/header"
 
-const containerStyle = {
-  maxWidth: `1000px`,
-  margin: `0 auto`,
-  padding: `30px 30px 15px 30px`,
-}
-
 const blogContainerStyle = {
   maxWidth: `600px`,
   margin: `0 auto`,

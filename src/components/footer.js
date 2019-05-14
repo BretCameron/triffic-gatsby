@@ -2,12 +2,6 @@ import React from "react"
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PropTypes from "prop-types"
 
-const navlinkStyle = {
-  display: `inline-block`,
-  padding: `0 15px`,
-  cursor: `pointer`
-}
-
 const containerStyle = {
   maxWidth: `1000px`,
   margin: `0 auto`,
@@ -47,8 +41,8 @@ const Footer = ({ siteTitle }) => (
                 margin: `0`,
                 fontSize: `0.9rem`
               }}>
-                <Link to="/privacy-policy" style={{color: `white`, textDecoration: `none`}}><li>Privacy Policy</li></Link>
-                  <Link to="/terms" style={{color: `white`, textDecoration: `none`}}><li>Terms and Conditions</li></Link>
+                <Link to="/privacy-policy" style={{ color: `white`, textDecoration: `none` }}><li>Privacy Policy</li></Link>
+                <Link to="/terms" style={{ color: `white`, textDecoration: `none` }}><li>Terms and Conditions</li></Link>
               </ul>
               <Link to="/"><img src={data.logoWhite.publicURL} alt="Logo" width="100" /></Link>
               <p style={{ fontSize: `0.9rem`, fontWeight: `100` }}>© {new Date().getFullYear()} triffic<br />Website by Bret Cameron</p>

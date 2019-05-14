@@ -3,12 +3,6 @@ import Header from "../components/header"
 import Tags from "../components/Tags"
 import Footer from "../components/footer"
 
-const containerStyle = {
-  maxWidth: `1000px`,
-  margin: `0 auto`,
-  padding: `30px 30px 15px 30px`,
-}
-
 const blogContainerStyle = {
   maxWidth: `800px`,
   margin: `0 auto`,

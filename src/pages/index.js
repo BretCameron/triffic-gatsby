@@ -2,9 +2,8 @@ import React from "react"
 import { Link, graphql, StaticQuery } from 'gatsby'
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import Header from "../components/header"
+// import Image from "../components/image"
+// import SEO from "../components/seo"
 import Slider from "../components/Slider"
 import Footer from "../components/footer"
 
@@ -156,13 +155,6 @@ const IndexPage = () => (
         resize: `vertical`,
       }
 
-      const footerStyle = {
-        background: `linear-gradient(#001111, black)`,
-        color: `white`,
-        width: `100%`,
-        margin: `-20px 0 0 0`
-      }
-
       return (
         <Layout>
           <section style={heroStyle}>
@@ -201,7 +193,7 @@ const IndexPage = () => (
                 <div style={processBlockStyle}>
                   <h2 style={numberStyle}>1.</h2>
                   <h3 style={h3ProcessStyle}>Define your goals</h3>
-                  <p>We’ll start by establishing your core goals, the keywords you want to rank for, and your brand voice.</p>
+                  <p>We’ll start by establishing your core goals, the keywords you want to rank for    and your brand voice.</p>
                 </div>
                 <div style={processBlockStyle}>
                   <h2 style={numberStyle}>2.</h2>
@@ -351,7 +343,7 @@ const IndexPage = () => (
                   </label>
                 </div>
                 <div style={{ gridColumn: `1/4`, width: `100%`, textAlign: `center` }}>
-                  <input type="submit" class="button" style={buttonStyle} value="Submit Form" />
+                  <input type="submit" className="button" style={buttonStyle} value="Submit Form" />
                 </div>
               </form>
             </div>

@@ -191,6 +191,7 @@ html {
   font: 112.5%/1.45em sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 * {
   box-sizing: inherit;
@@ -641,7 +642,8 @@ b {
   font-weight: 400;
 }
 
-ul > a > li:hover, a:hover {
+ul > a > li:hover,
+a:hover {
   text-decoration: underline;
 }
 
@@ -657,4 +659,41 @@ ul > a > li:hover, a:hover {
 .sample:hover {
   background: rgba(255, 255, 255, 1);
   color: #111;
+}
+
+// Slider: Arrow
+
+.arrow-container-left,
+.arrow-container-right {
+  height: 50vh;
+  min-height: 500px;
+  cursor: pointer;
+  width: 20%;
+  transition: 200ms ease-out;
+  color: white;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  padding: 80px;
+  pointer-events: all;
+}
+
+.arrow-container-left {
+  justify-content: flex-start;
+}
+
+.arrow-container-right {
+  justify-content: flex-end;
+}
+
+.arrow-container-left:hover {
+  transition: 200ms ease-out;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  opacity: 1;
+}
+
+.arrow-container-right:hover {
+  transition: 200ms ease-out;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  opacity: 1;
 }
