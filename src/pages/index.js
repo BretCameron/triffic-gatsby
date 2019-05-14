@@ -120,7 +120,7 @@ const IndexPage = () => (
           <section style={heroStyle}>
             {/* <Header /> */}
             <div style={containerStyle}>
-              <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start` }}>
+              <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start`, padding: `30px 0 15px 0` }}>
                 <div><Link to="/"><img src={data.logoWhite.publicURL} alt="Logo" width="120" /></Link></div>
                 <div style={{ padding: `20px 0`, margin: `0 0 0 0` }}>
                   <ul style={{ listStyle: `none` }}>

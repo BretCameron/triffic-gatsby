@@ -11,7 +11,7 @@ const navlinkStyle = {
 const containerStyle = {
   maxWidth: `1000px`,
   margin: `0 auto`,
-  padding: `30px 30px 15px 30px`,
+  padding: `30px 15px 15px 15px`,
 }
 
 const Header = ({ siteTitle }) => (
