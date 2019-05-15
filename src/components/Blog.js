@@ -47,17 +47,7 @@ export default class Blog extends React.Component {
         </div>
 
         {this.props.image ? <Img
-          style={{
-            width: `100%`,
-            height: `60vh`,
-            minHeight: `500px`,
-            maxHeight: `700px`,
-            // height: `50vh`,
-            objectFit: `cover`,
-            objectPosition: `center top`,
-            margin: 0,
-            padding: 0,
-          }}
+          className="blog-image"
           fluid={this.props.image} alt={this.props.title}
         /> : ''}
 

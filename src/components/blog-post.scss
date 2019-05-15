@@ -52,3 +52,16 @@
   }
   }
 }
+
+.blog-image {
+  width: 100%;
+  height: 60vh;
+  min-height: 500px;
+  max-height: 700px;
+  margin: 0;
+  padding: 0;
+  
+  img, picture > img {
+  object-position: center top !important;
+  }
+}
