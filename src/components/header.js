@@ -3,12 +3,6 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 // import PropTypes from "prop-types"
 import ReactResizeDetector from 'react-resize-detector'
 
-const containerStyle = {
-  maxWidth: `1000px`,
-  margin: `0 auto`,
-  padding: `30px 15px 15px 15px`,
-}
-
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -64,11 +58,11 @@ class Header extends React.Component {
           return (
             <header style={{ background: `${this.handleBackground()}`, marginTop: `-1px` }}>
             <ReactResizeDetector handleWidth onResize={this.closeNav} />
-              <div style={containerStyle}>
+              <div className="header-container">
                 <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start` }}>
                   <div style={{ flexShrink: 0 }}>
                     <Link to="/">
-                      <img src={data.logoWhite.publicURL} alt="Logo" width="120" style={{ margin: 0, padding: 0 }} />
+                      <img src={data.logoWhite.publicURL} alt="Logo" width="120" className="header-logo" />
                     </Link>
                   </div>
                   <div style={{ padding: `20px 0 0 0`, flexShrink: 0 }}>

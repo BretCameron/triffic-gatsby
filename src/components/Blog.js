@@ -2,12 +2,15 @@ import React from "react"
 import Header from "../components/header"
 import Tags from "../components/Tags"
 import Footer from "../components/footer"
+import Img from "gatsby-image"
 
 const blogContainerStyle = {
   maxWidth: `800px`,
   margin: `0 auto`,
   padding: `15px 15px 0 15px`,
 }
+
+// To do: upload images using Gatsby Image, not from Medium etc.
 
 export default class Blog extends React.Component {
   constructor(props) {
@@ -34,7 +37,7 @@ export default class Blog extends React.Component {
               <h2>{this.props.subtitle}</h2>
               <div>
                 <span style={{ fontSize: `0.9rem`, textTransform: `uppercase` }}>{Math.ceil(this.state.wordCount / 200)} minute read</span>
-                <div style={{ fontSize: `0.8rem`, fontStyle: `italic` }} dangerouslySetInnerHTML={{ __html: this.props.publishedIn ? `Originally published in <a href="${this.props.publishedURL}">${this.props.publishedIn}</a>.` : '' }}></div>
+                <div style={{ fontSize: `0.8rem`, fontStyle: `italic`, paddingBottom: `10px` }} dangerouslySetInnerHTML={{ __html: this.props.publishedIn ? `Originally published in <a href="${this.props.publishedURL}">${this.props.publishedIn}</a>.` : '' }}></div>
               </div>
               <hr />
               <Tags keywords={this.props.keywords} />
@@ -43,17 +46,19 @@ export default class Blog extends React.Component {
           </div>
         </div>
 
-        {this.props.image ? <img
+        {this.props.image ? <Img
           style={{
             width: `100%`,
+            height: `60vh`,
             minHeight: `500px`,
+            maxHeight: `700px`,
             // height: `50vh`,
             objectFit: `cover`,
             objectPosition: `center top`,
             margin: 0,
             padding: 0,
           }}
-          src={this.props.image} alt={this.props.title}
+          fluid={this.props.image} alt={this.props.title}
         /> : ''}
 
         <div style={blogContainerStyle}>

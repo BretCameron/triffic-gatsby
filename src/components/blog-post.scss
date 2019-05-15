@@ -17,7 +17,7 @@
 .blog-content {
   margin-bottom: 50px;
   
-  p {
+  p, li {
     text-align: justify;
     text-justify: inter-word;
     font-weight: 200;
@@ -44,7 +44,7 @@
 
 @media only screen and (max-width: 480px) {
   .blog-content {
-  p {
+  p, li {
     text-align: justify;
     text-justify: inter-word;
     font-weight: 200;

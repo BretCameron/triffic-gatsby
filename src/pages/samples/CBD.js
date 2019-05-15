@@ -11,7 +11,7 @@ const CBD = () => (
         <Blog
           title={data.content.childMarkdownRemark.frontmatter.title}
           subtitle={data.content.childMarkdownRemark.frontmatter.subtitle}
-          image={data.content.childMarkdownRemark.frontmatter.image}
+          image={data.image.childImageSharp.fluid}
           keywords={data.content.childMarkdownRemark.frontmatter.keywords}
           publishedIn={data.content.childMarkdownRemark.frontmatter.publishedIn}
           publishedURL={data.content.childMarkdownRemark.frontmatter.publishedURL}
@@ -40,7 +40,14 @@ const postQuery = graphql`
                   }
                 html
                 }
-            }
+              }
+              image: file(relativePath: {eq: "post-images/cbd.jpeg"}) {
+                childImageSharp {
+                  fluid(quality: 90, maxWidth: 2000) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
         }`
 
 export default CBD
