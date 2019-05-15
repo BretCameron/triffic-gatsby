@@ -82,30 +82,34 @@ export default class ContactUs extends React.Component {
               <p style={subtitleStyle2}>If you want to find out more or arrange a trial, simply fill in the form below.</p>
             </div>
           </div>
-          <form
-            name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" id="contact"
-            className="contact-form">
-            <input type="hidden" name="form-name" value="contact" />
+          <form 
+          name="contact" 
+          method="post" 
+          data-netlify="true" data-netlify-honeypot="bot-field" 
+          id="contact"
+          className="contact-form"
+          >
             <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
             <div>
               <label htmlFor="name">
                 <span style={labelStyle}>Name*</span>
                 <br />
-                <input style={inputStyle} type="text" />
+                <input style={inputStyle} type="text" name="name" id="name" />
               </label>
             </div>
             <div>
               <label htmlFor="email">
                 <span style={labelStyle}>Email*</span>
                 <br />
-                <input style={inputStyle} type="text" />
+                <input style={inputStyle} type="text" name="email" id="email" />
               </label>
             </div>
             <div>
               <label htmlFor="website">
                 <span style={labelStyle}>Company Website*</span>
                 <br />
-                <input style={inputStyle} type="text" />
+                <input style={inputStyle} type="text" name="website" id="website" />
               </label>
             </div>
             <div style={{ gridColumn: `1/4`, width: `100%`, }}>
