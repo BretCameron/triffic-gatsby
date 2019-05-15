@@ -4,9 +4,10 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import Layout from "../components/layout"
 // import Image from "../components/image"
 // import SEO from "../components/seo"
+import Header from "../components/Header"
 import Slider from "../components/Slider"
 import ContactUs from "../components/ContactUs"
-import Footer from "../components/footer"
+import Footer from "../components/Footer"
 
 // To do: make header mobile friendly, and at really small widths the slider covers up the section below
 
@@ -38,12 +39,6 @@ const IndexPage = () => (
         width: `100%`,
         height: `auto`,
         padding: `0 0 150px 0`
-      }
-
-      const navlinkStyle = {
-        display: `inline-block`,
-        padding: `0 15px`,
-        cursor: `pointer`
       }
 
       const titleStyle = {
@@ -118,19 +113,9 @@ const IndexPage = () => (
       return (
         <Layout>
           <section style={heroStyle}>
-            {/* <Header /> */}
+            <Header background="none" />
             <div style={containerStyle}>
-              <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start`, padding: `30px 0 15px 0` }}>
-                <div><Link to="/"><img src={data.logoWhite.publicURL} alt="Logo" width="120" /></Link></div>
-                <div style={{ padding: `20px 0`, margin: `0 0 0 0` }}>
-                  <ul style={{ listStyle: `none` }}>
-                    <a style={{ color: `white`, }} href="#our-process"><li style={navlinkStyle}>Our Process</li></a>
-                    <a style={{ color: `white`, }} href="#sample-writing"><li style={navlinkStyle}>Sample Writing</li></a>
-                    <a style={{ color: `white`, }} href="#our-team"><li style={navlinkStyle}>Our Team</li></a>
-                    <a style={{ color: `white`, }} href="#contact-us"><li style={navlinkStyle}>Contact Us</li></a>
-                  </ul>
-                </div>
-              </div>
+              
               <div style={{ maxWidth: `500px`, padding: `5px 0` }}>
                 <h1 style={titleStyle}>Business Blogging Made Easy</h1>
                 <p style={subtitleStyle}>Drive 97% more traffic to your website with high-quality, SEO-optimised blog posts.</p>

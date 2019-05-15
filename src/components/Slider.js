@@ -105,6 +105,7 @@ class Slider extends React.Component {
       // return 1;
       return (
         <Slide
+        key={index}
           fluid={slide.fluid}
           color={slide.color}
           align={slide.align}
@@ -120,7 +121,7 @@ class Slider extends React.Component {
 
   sliderProgress() {
     return slides.map((el, index) => {
-      return <li id={`circle-${index}`} onClick={this.goToDirectSlide} style={{ pointerEvents: `all`, cursor: `pointer`, display: `inline-block`, padding: `5px`, opacity: `${index === this.state.slide ? 1 : 0.5}`, color: `${slides[this.state.slide].color}`, userSelect: `none` }}>•</li>
+      return <li id={`circle-${index}`} key={`circle-${index}`} onClick={this.goToDirectSlide} style={{ pointerEvents: `all`, cursor: `pointer`, display: `inline-block`, padding: `5px`, opacity: `${index === this.state.slide ? 1 : 0.5}`, color: `${slides[this.state.slide].color}`, userSelect: `none` }}>•</li>
     });
   }
 

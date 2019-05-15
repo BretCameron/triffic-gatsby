@@ -1,12 +1,6 @@
 import React from "react"
 import { Link, graphql, StaticQuery } from 'gatsby'
-import PropTypes from "prop-types"
-
-const navlinkStyle = {
-  display: `inline-block`,
-  padding: `0 15px`,
-  cursor: `pointer`
-}
+// import PropTypes from "prop-types"
 
 const containerStyle = {
   maxWidth: `1000px`,
@@ -14,8 +8,29 @@ const containerStyle = {
   padding: `30px 15px 15px 15px`,
 }
 
-const Header = ({ siteTitle }) => (
-  <StaticQuery query={graphql`
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { mobileNavOpen: false };
+    this.handleClick = this.handleClick.bind(this);
+    this.closeNav = this.closeNav.bind(this);
+  }
+
+  handleClick() {
+    const newState = this.state;
+    newState.mobileNavOpen = !this.state.mobileNavOpen;
+    this.setState(newState);
+  }
+  
+  closeNav() {
+    const newState = this.state;
+    newState.mobileNavOpen = false;
+    this.setState(newState);
+  }
+
+  render() {
+    return (
+      <StaticQuery query={graphql`
       query {
         logoWhite: file(relativePath: {eq: "white_logo.svg"}) {
           publicURL
@@ -25,41 +40,56 @@ const Header = ({ siteTitle }) => (
           publicURL
           relativePath
         }
+        bars: file(relativePath: {eq: "bars.svg"}) {
+          publicURL
+          relativePath
+        }
       }
     `}
-    render={data => {
-      return (
-        <header style={{ background: `linear-gradient(30deg, #005980, #008080, #00d99d)` }}>
-          <div style={containerStyle}>
-            <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start` }}>
-              <div>
-                <Link to="/">
-                  <img src={data.logoWhite.publicURL} alt="Logo" width="120" style={{ margin: 0, padding: 0 }} />
-                </Link>
+        render={data => {
+          return (
+            <header style={{
+              background: `${this.props.background ? this.props.background : "linear-gradient(30deg, #005980, #008080, #00d99d)"}` 
+            }}
+            >
+              <div style={containerStyle}>
+                <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start` }}>
+                  <div style={{ flexShrink: 0 }}>
+                    <Link to="/">
+                      <img src={data.logoWhite.publicURL} alt="Logo" width="120" style={{ margin: 0, padding: 0 }} />
+                    </Link>
+                  </div>
+                  <div style={{ padding: `20px 0 0 0`, flexShrink: 0 }}>
+                    <ul style={{ listStyle: `none` }}>
+                      <li
+                        className="triple-bar"
+                      ><button type="button" style={{ background: `none`, border: `none`, padding: `10px 10px 6px 10px`, margin: `0 0 -10px 0`, cursor: `pointer` }} onClick={this.handleClick}>
+                          <img src={data.bars.publicURL} alt="View Navigation" style={{
+                            width: `2rem`,
+                          }} />
+                        </button>
+                      </li>
+                      <Link style={{ color: `white`, }} to="/#our-process"><li className="nav-link">Our Process</li></Link>
+                      <Link style={{ color: `white`, }} to="/#sample-writing"><li className="nav-link">Sample Writing</li></Link>
+                      <Link style={{ color: `white`, }} to="/#our-team"><li className="nav-link">Our Team</li></Link>
+                      <Link style={{ color: `white`, }} to="/#contact-us"><li className="nav-link">Contact Us</li></Link>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div style={{ padding: `20px 0 0 0`, margin: `0 0 0 0` }}>
-                <ul style={{ listStyle: `none` }}>
-                  <Link style={{ color: `white`, }} to="/#our-process"><li style={navlinkStyle}>Our Process</li></Link>
-                  <Link style={{ color: `white`, }} to="/#sample-writing"><li style={navlinkStyle}>Sample Writing</li></Link>
-                  <Link style={{ color: `white`, }} to="/#our-team"><li style={navlinkStyle}>Our Team</li></Link>
-                  <Link style={{ color: `white`, }} to="/#contact-us"><li style={navlinkStyle}>Contact Us</li></Link>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </header>
-      )
-    }
-    }
-  />
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+              <ul style={{ listStyle: `none`, margin: `0 0 20px 0`, textAlign: `center` }}>
+                <Link onClick={this.closeNav} style={{ color: `white`, }} to="/#our-process" className={this.state.mobileNavOpen ? 'nav-link-mobile' : 'nav-link-hidden'}><li>Our Process</li></Link>
+                <Link onClick={this.closeNav} style={{ color: `white`, }} to="/#sample-writing" className={this.state.mobileNavOpen ? 'nav-link-mobile' : 'nav-link-hidden'}><li>Sample Writing</li></Link>
+                <Link onClick={this.closeNav} style={{ color: `white`, }} to="/#our-team" className={this.state.mobileNavOpen ? 'nav-link-mobile' : 'nav-link-hidden'}><li>Our Team</li></Link>
+                <Link onClick={this.closeNav} style={{ color: `white`, }} to="/#contact-us" className={this.state.mobileNavOpen ? 'nav-link-mobile' : 'nav-link-hidden'}><li>Contact Us</li></Link>
+              </ul>
+            </header>
+          )
+        }
+        }
+      />
+    )
+  }
 }
 
 export default Header

@@ -823,6 +823,7 @@ a:hover {
   }
 
   .our-process-grid {
+        text-align: center;
     display: block;
     text-align: center;
 
@@ -835,4 +836,52 @@ a:hover {
       border-top: 1px solid teal;
     }
   }
+}
+
+// Navigation
+
+.nav-link {
+  display: inline-block;
+  padding: 0 15px;
+  cursor: pointer;
+    // margin: -10px 0 0 0;
+}
+
+.triple-bar {
+  cursor: pointer;
+  display: none;
+  color: white;
+  margin: -6px 0 3px 0;
+  // transform: translateY(-5px);
+}
+
+@media only screen and (max-width: 700px) {
+
+.nav-link {
+  display: none;
+}
+
+.triple-bar {
+  display: inline-block;
+}
+
+}
+
+.nav-link-mobile {
+  display: block;
+  position: static;
+  padding: 12px 5px 6px 5px;
+  margin: 0;
+  width: 100%;
+  // left: 0;
+  background: linear-gradient(30deg, #11111144, #22222244);
+  text-decoration: none;
+}
+
+.nav-link-mobile:hover {
+  background: linear-gradient(30deg, #11111166, #22222266);
+}
+
+.nav-link-hidden {
+  display: none;
 }

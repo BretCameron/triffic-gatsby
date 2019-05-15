@@ -1,7 +1,7 @@
 import React from "react"
-import Header from "../components/header"
+import Header from "../components/Header"
 import Tags from "../components/Tags"
-import Footer from "../components/footer"
+import Footer from "../components/Footer"
 
 const blogContainerStyle = {
   maxWidth: `800px`,
@@ -32,10 +32,10 @@ export default class Blog extends React.Component {
             <div style={{ textAlign: `center` }}>
               <h1>{this.props.title}</h1>
               <h2>{this.props.subtitle}</h2>
-              <p>
+              <div>
                 <span style={{ fontSize: `0.9rem`, textTransform: `uppercase` }}>{Math.ceil(this.state.wordCount / 200)} minute read</span>
                 <div style={{ fontSize: `0.8rem`, fontStyle: `italic` }} dangerouslySetInnerHTML={{ __html: this.props.publishedIn ? `Originally published in <a href="${this.props.publishedURL}">${this.props.publishedIn}</a>.` : '' }}></div>
-              </p>
+              </div>
               <hr />
               <Tags keywords={this.props.keywords} />
               <hr />
