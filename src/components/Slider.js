@@ -188,14 +188,14 @@ leftarrow: file(relativePath: { eq: "left-arrow.svg" }) {
               }}>
                 <div className="arrow-container-left"
                   onClick={this.handlePreviousSlide}>
-                  <img src={data.leftarrow.publicURL} alt="Next Slide" />
+                  <img style={{ maxWidth: `50px`, minWidth: `30px`}} src={data.leftarrow.publicURL} alt="Next Slide" />
                 </div>
                 <ul className="slider-progress">
                   {this.sliderProgress()}
                 </ul>
                 <div className="arrow-container-right"
                   onClick={this.handleNextSlide}>
-                  <img src={data.rightarrow.publicURL} alt="Next Slide" />
+                  <img style={{ maxWidth: `50px`, minWidth: `30px`}} src={data.rightarrow.publicURL} alt="Next Slide" />
                 </div>
               </div>
             </>
