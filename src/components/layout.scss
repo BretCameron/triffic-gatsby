@@ -842,11 +842,13 @@ a:hover {
 
 .our-process-heading {
   text-align: right;
+      padding: 30px 0 0 0;
 }
 
 @media only screen and (max-width: 480px) {
   .our-process-heading {
     text-align: center;
+    padding: 40px 0 0 0;
   }
 
   .our-process-grid {

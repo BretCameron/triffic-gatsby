@@ -126,17 +126,17 @@ const IndexPage = () => (
                 <div>
                   <h2 style={numberStyle}>1.</h2>
                   <h3 style={h3ProcessStyle}>Define your goals</h3>
-                  <p>We’ll start by establishing your core goals, the keywords you want to rank for    and your brand voice.</p>
+                  <p style={subtitleStyle2}>We’ll start by establishing your core goals, the keywords you want to rank for    and your brand voice.</p>
                 </div>
                 <div>
                   <h2 style={numberStyle}>2.</h2>
                   <h3 style={h3ProcessStyle}>Create your blueprint</h3>
-                  <p>Together, we’ll fine-tune a content plan – usually covering the next 3-6 months – based on your specific goals.</p>
+                  <p style={subtitleStyle2}>Together, we’ll fine-tune a content plan – usually covering the next 3-6 months – based on your specific goals.</p>
                 </div>
                 <div>
                   <h2 style={numberStyle}>3.</h2>
                   <h3 style={h3ProcessStyle}>Hit publish</h3>
-                  <p>We’ll send you your content on a regular schedule, and – after any feedback – all you have to do is press publish!</p>
+                  <p style={subtitleStyle2}>We’ll send you your content on a regular schedule, and – after any feedback – all you have to do is press publish!</p>
                 </div>
               </div>
             </div>
@@ -156,29 +156,29 @@ const IndexPage = () => (
               <div className="sample-grid">
                 {/* <div style={sampleStyle}>
                   <h2>Finance</h2>
-                  <p>What we can learn from the commodity dip</p>
+                  <p style={subtitleStyle2}>What we can learn from the commodity dip</p>
                 </div>
                 <div style={sampleStyle}>
                   <h2>Blockchain</h2>
-                  <p>How blockchain technology can improve your supply chain</p>
+                  <p style={subtitleStyle2}>How blockchain technology can improve your supply chain</p>
                 </div> */}
                 <Link to="/samples/social" style={{
                   color: `white`, textDecoration: `none`
                 }}><div className="sample">
                     <h2>Social Media</h2>
-                    <p>What do users really think about Snapchat’s redesign?</p>
+                    <p style={subtitleStyle2}>What do users really think about Snapchat’s redesign?</p>
                   </div></Link>
                 {/* <div style={sampleStyle}>
                   <h2>Recruitment</h2>
-                  <p>20 steps to landing your dream job</p>
+                  <p style={subtitleStyle2}>20 steps to landing your dream job</p>
                 </div>
                 <div style={sampleStyle}>
                   <h2>Property</h2>
-                  <p>How to stay ahead in property in 2019</p>
+                  <p style={subtitleStyle2}>How to stay ahead in property in 2019</p>
                 </div> */}
                 <Link to="/samples/CBD" style={{ color: `white`, textDecoration: `none` }}><div className="sample">
                   <h2>CBD</h2>
-                  <p>With the CBD industry exploding, how do you spot fake oils?</p>
+                  <p style={subtitleStyle2}>With the CBD industry exploding, how do you spot fake oils?</p>
                 </div></Link>
               </div>
             </div>

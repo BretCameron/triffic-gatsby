@@ -6,7 +6,7 @@ import Footer from "../components/footer"
 const blogContainerStyle = {
   maxWidth: `800px`,
   margin: `0 auto`,
-  padding: `50px 15px 0 15px`,
+  padding: `15px 15px 0 15px`,
 }
 
 export default class Blog extends React.Component {
@@ -46,8 +46,8 @@ export default class Blog extends React.Component {
         {this.props.image ? <img
           style={{
             width: `100%`,
-            height: `50vh`,
-            minHeight: `600px`,
+            minHeight: `500px`,
+            // height: `50vh`,
             objectFit: `cover`,
             objectPosition: `center top`,
             margin: 0,
