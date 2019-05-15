@@ -32,7 +32,12 @@
     text-indent: 0;
   }
 
-  h3 + p {
+  h1 + p, 
+  h2 + p, 
+  h3 + p, 
+  h4 + p, 
+  h5 + p, 
+  h6 + p {
     text-indent: 0;
   }
 }
