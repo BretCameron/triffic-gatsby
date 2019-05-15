@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql, StaticQuery } from 'gatsby'
 // import PropTypes from "prop-types"
+import ReactResizeDetector from 'react-resize-detector'
 
 const containerStyle = {
   maxWidth: `1000px`,
@@ -13,6 +14,7 @@ class Header extends React.Component {
     super(props);
     this.state = { mobileNavOpen: false };
     this.handleClick = this.handleClick.bind(this);
+    this.handleBackground = this.handleBackground.bind(this);
     this.closeNav = this.closeNav.bind(this);
   }
 
@@ -26,6 +28,18 @@ class Header extends React.Component {
     const newState = this.state;
     newState.mobileNavOpen = false;
     this.setState(newState);
+  }
+
+  handleBackground() {
+    if (!this.props.background && !this.state.mobileNavOpen) {
+      return "linear-gradient(30deg, #005980, #008080, #00d99d)";
+    };
+    if (this.props.background && !this.state.mobileNavOpen) {
+      return this.props.background;
+    };
+    if (this.props.background === "none" && this.state.mobileNavOpen) {
+      return "linear-gradient(30deg, #11111144, #22222244)";
+    };
   }
 
   render() {
@@ -48,10 +62,9 @@ class Header extends React.Component {
     `}
         render={data => {
           return (
-            <header style={{
-              background: `${this.props.background ? this.props.background : "linear-gradient(30deg, #005980, #008080, #00d99d)"}` 
-            }}
-            >
+            <>
+             <ReactResizeDetector handleWidth onResize={this.closeNav} />
+            <header style={{ background: `${this.handleBackground()}` }}>
               <div style={containerStyle}>
                 <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start` }}>
                   <div style={{ flexShrink: 0 }}>
@@ -63,7 +76,7 @@ class Header extends React.Component {
                     <ul style={{ listStyle: `none` }}>
                       <li
                         className="triple-bar"
-                      ><button type="button" style={{ background: `none`, border: `none`, padding: `10px 10px 6px 10px`, margin: `0 0 -10px 0`, cursor: `pointer` }} onClick={this.handleClick}>
+                      ><button type="button" style={{ background: `none`, border: `none`, padding: `10px 10px 6px 10px`, margin: `0 0 -10px 0`, transform: `translateY(-5px)`, cursor: `pointer` }} onClick={this.handleClick}>
                           <img src={data.bars.publicURL} alt="View Navigation" style={{
                             width: `2rem`,
                           }} />
@@ -84,6 +97,7 @@ class Header extends React.Component {
                 <Link onClick={this.closeNav} style={{ color: `white`, }} to="/#contact-us" className={this.state.mobileNavOpen ? 'nav-link-mobile' : 'nav-link-hidden'}><li>Contact Us</li></Link>
               </ul>
             </header>
+            </>
           )
         }
         }

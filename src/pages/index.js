@@ -162,28 +162,28 @@ const IndexPage = () => (
                 </div>
               </div>
               <div className="sample-grid">
-                <div style={sampleStyle}>
+                {/* <div style={sampleStyle}>
                   <h2>Finance</h2>
                   <p>What we can learn from the commodity dip</p>
                 </div>
                 <div style={sampleStyle}>
                   <h2>Blockchain</h2>
                   <p>How blockchain technology can improve your supply chain</p>
-                </div>
+                </div> */}
                 <Link to="/samples/social" style={{
                   color: `white`, textDecoration: `none`
                 }}><div className="sample">
                     <h2>Social Media</h2>
                     <p>What do users really think about Snapchat’s redesign?</p>
                   </div></Link>
-                <div style={sampleStyle}>
+                {/* <div style={sampleStyle}>
                   <h2>Recruitment</h2>
                   <p>20 steps to landing your dream job</p>
                 </div>
                 <div style={sampleStyle}>
                   <h2>Property</h2>
                   <p>How to stay ahead in property in 2019</p>
-                </div>
+                </div> */}
                 <Link to="/samples/CBD" style={{ color: `white`, textDecoration: `none` }}><div className="sample">
                   <h2>CBD</h2>
                   <p>With the CBD industry exploding, how do you spot fake oils?</p>
