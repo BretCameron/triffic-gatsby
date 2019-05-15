@@ -62,9 +62,8 @@ class Header extends React.Component {
     `}
         render={data => {
           return (
-            <>
-             <ReactResizeDetector handleWidth onResize={this.closeNav} />
-            <header style={{ background: `${this.handleBackground()}` }}>
+            <header style={{ background: `${this.handleBackground()}`, marginTop: `-1px` }}>
+            <ReactResizeDetector handleWidth onResize={this.closeNav} />
               <div style={containerStyle}>
                 <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `start` }}>
                   <div style={{ flexShrink: 0 }}>
@@ -97,7 +96,6 @@ class Header extends React.Component {
                 <Link onClick={this.closeNav} style={{ color: `white`, }} to="/#contact-us" className={this.state.mobileNavOpen ? 'nav-link-mobile' : 'nav-link-hidden'}><li>Contact Us</li></Link>
               </ul>
             </header>
-            </>
           )
         }
         }

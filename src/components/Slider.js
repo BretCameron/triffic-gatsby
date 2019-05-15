@@ -159,7 +159,7 @@ leftarrow: file(relativePath: { eq: "left-arrow.svg" }) {
                 padding: `0`,
                 whiteSpace: `nowrap`,
                 transform: `translateX(${-this.state.slide * 100}%)`,
-                transition: `200ms ease-out`
+                transition: `200ms ease-out`,
               }}>
 
 

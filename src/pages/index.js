@@ -41,14 +41,6 @@ const IndexPage = () => (
         padding: `0 0 150px 0`
       }
 
-      const titleStyle = {
-        fontSize: `3.2rem`,
-      }
-
-      const titleStyle2 = {
-        fontSize: `2.5rem`,
-      }
-
       const subtitleStyle = {
         fontSize: `1.4rem`,
         lineHeight: `2rem`,
@@ -117,7 +109,7 @@ const IndexPage = () => (
             <div style={containerStyle}>
               
               <div style={{ maxWidth: `500px`, padding: `5px 0` }}>
-                <h1 style={titleStyle}>Business Blogging Made Easy</h1>
+                <h1 className="title">Business Blogging Made Easy</h1>
                 <p style={subtitleStyle}>Drive 97% more traffic to your website with high-quality, SEO-optimised blog posts.</p>
                 <a href="#contact-us"><button type="button" style={buttonStyle}>Arrange a Trial</button></a>
               </div>
@@ -127,7 +119,7 @@ const IndexPage = () => (
           <section style={{ margin: `-100px 0 20px 0` }} id="our-process">
             <div style={containerStyle}>
               <div className="our-process-heading">
-                <h1 style={titleStyle2}>Our Process</h1>
+                <h1 className="title2">Our Process</h1>
                 <p style={subtitleStyle2}>Our 3-step formula for blogging success.</p>
               </div>
               <div className="our-process-grid">
@@ -157,7 +149,7 @@ const IndexPage = () => (
                   textAlign: `center`,
                   padding: `0 0 50px 0`
                 }}>
-                  <h1 style={titleStyle2}>Sample Writing</h1>
+                  <h1 className="title2">Sample Writing</h1>
                   <p style={subtitleStyle2}>A few samples of our work. If you’d like to see more, or you’re looking for a specific vertical, feel free to <a href="#contact-us" style={{ color: `white` }}>get in touch</a>.</p>
                 </div>
               </div>
@@ -199,7 +191,7 @@ const IndexPage = () => (
                 textAlign: `left`
               }} id="our-team">
                 {/* <div style={subContainerStyle}> */}
-                <h1 style={titleStyle2}>Our Team</h1>
+                <h1 className="title2">Our Team</h1>
                 <p style={subtitleStyle2}>Our team have backgrounds in both copywriting and marketing (particularly SEO).</p><p style={subtitleStyle2}>Together, our founders have 3 humanities degrees from the University of Cambridge, and they have worked on campaigns for clients including <b>Facebook</b>, <b>EY</b>, <b>Universal Music</b> and <b>Deliveroo</b>.</p>
                 {/* </div> */}
               </div>
