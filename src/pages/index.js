@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import Header from "../components/Header"
 import Slider from "../components/Slider"
 import ContactUs from "../components/ContactUs"
-import Footer from "../components/Footer"
+import Footer from "../components/footer"
 
 // To do: make header mobile friendly, and at really small widths the slider covers up the section below
 
