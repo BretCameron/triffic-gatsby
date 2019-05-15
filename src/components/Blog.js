@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "../components/Header"
+import Header from "../components/header"
 import Tags from "../components/Tags"
 import Footer from "../components/footer"
 

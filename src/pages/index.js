@@ -4,7 +4,7 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import Layout from "../components/layout"
 // import Image from "../components/image"
 // import SEO from "../components/seo"
-import Header from "../components/Header"
+import Header from "../components/header"
 import Slider from "../components/Slider"
 import ContactUs from "../components/ContactUs"
 import Footer from "../components/footer"
@@ -103,12 +103,12 @@ const IndexPage = () => (
         padding: `50px 0`
       }
 
-      const sampleStyle = {
-        border: `1px solid white`,
-        padding: `20px`,
-        borderRadius: `5px`,
-        background: `rgba(255, 255, 255, 0.05)`,
-      }
+      // const sampleStyle = {
+      //   border: `1px solid white`,
+      //   padding: `20px`,
+      //   borderRadius: `5px`,
+      //   background: `rgba(255, 255, 255, 0.05)`,
+      // }
 
       return (
         <Layout>
