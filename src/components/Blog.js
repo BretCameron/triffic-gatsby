@@ -3,6 +3,7 @@ import Header from "../components/header"
 import Tags from "../components/Tags"
 import Footer from "../components/footer"
 import Img from "gatsby-image"
+import { Helmet } from "react-helmet"
 
 const blogContainerStyle = {
   maxWidth: `800px`,
@@ -28,6 +29,12 @@ export default class Blog extends React.Component {
   render() {
     return (
       <>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{this.props.title}</title>
+          <link rel="canonical" href="https://triffic.io/" />
+        </Helmet>
+
         <Header />
         <div style={blogContainerStyle}>
 
